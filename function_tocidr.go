@@ -4,6 +4,7 @@
 // tocidr function converts an IP address and subnet mask to CIDR notation.
 // takes two string parameters: the IP address and the subnet mask.
 // returns a string result with IP address and subnet mask in CIDR format (e.g., "192.168.128.1/24").
+// fails if the address is not an IPv4 address or if the subnet mask is not valid.
 
 package main
 
