@@ -1,3 +1,6 @@
+// Copyright (c) Krzysztof Ciepłucha
+// SPDX-License-Identifier: MIT
+
 package main
 
 import (

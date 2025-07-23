@@ -1,3 +1,10 @@
+// Copyright (c) Krzysztof Ciepłucha
+// SPDX-License-Identifier: MIT
+
+// iputils is a Terraform provider that provides utility functions for IP address manipulation
+// there are no resources or data sources implemented in this provider
+// no configuration options are supported
+
 package main
 
 import (
