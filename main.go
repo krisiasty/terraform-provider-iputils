@@ -23,7 +23,7 @@ func main() {
 		Address: "registry.terraform.io/krisiasty/iputils",
 	}
 
-	err := providerserver.Serve(context.Background(), NewIPUtilsProvider(version), opts)
+	err := providerserver.Serve(context.Background(), newIputilsProvider(version), opts)
 	if err != nil {
 		log.Fatal(err.Error())
 	}
