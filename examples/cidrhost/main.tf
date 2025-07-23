@@ -25,3 +25,7 @@ output "host2" {
 # output "invalid_mask" {
 #   value = provider::iputils::cidrhost("10.0.0.1/33")
 # }
+
+# output "missing_mask" {
+#   value = provider::iputils::cidrhost("10.0.0.1")
+# }
