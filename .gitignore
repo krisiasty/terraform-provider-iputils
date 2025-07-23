@@ -31,3 +31,4 @@ go.work.sum
 # .idea/
 # .vscode/
 terraform-provider-iputils
+**/terraform.tfstate

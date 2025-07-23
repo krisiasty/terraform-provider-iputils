@@ -36,6 +36,6 @@ output "cidr2" {
 #   value = provider::iputils::tocidr("10.0.0","255.255.0.0")
 # }
 
-output "invalid_address2" {
-  value = provider::iputils::tocidr("::1","255.255.0.0")
-}
+# output "invalid_address2" {
+#   value = provider::iputils::tocidr("::1","255.255.0.0")
+# }

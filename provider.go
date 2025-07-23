@@ -60,6 +60,7 @@ func (p *iputilsProvider) Resources(_ context.Context) []func() resource.Resourc
 // Functions defines the functions implemented in the provider.
 func (p *iputilsProvider) Functions(_ context.Context) []func() function.Function {
 	return []func() function.Function{
-		newTocidrFunction, // tocidr(address, mask string) string
+		newTocidrFunction,   // tocidr(address, mask string) string
+		newCidrhostFunction, // cidrhost(cidr string) string
 	}
 }
