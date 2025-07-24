@@ -30,7 +30,7 @@ func (f *cidrhostFunction) Metadata(ctx context.Context, req function.MetadataRe
 
 func (f *cidrhostFunction) Definition(ctx context.Context, req function.DefinitionRequest, resp *function.DefinitionResponse) {
 	resp.Definition = function.Definition{
-		Description: "Return host portion from the address in CIDR notation.",
+		Description: "Return host portion from the address in CIDR notation",
 		Parameters: []function.Parameter{
 			function.StringParameter{
 				Name:        "cidr",

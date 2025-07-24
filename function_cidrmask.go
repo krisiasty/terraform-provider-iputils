@@ -31,7 +31,7 @@ func (f *cidrmaskFunction) Metadata(ctx context.Context, req function.MetadataRe
 
 func (f *cidrmaskFunction) Definition(ctx context.Context, req function.DefinitionRequest, resp *function.DefinitionResponse) {
 	resp.Definition = function.Definition{
-		Description: "Return mask portion (with leading slash '/') from the address in CIDR notation.",
+		Description: "Return mask portion (with leading slash '/') from the address in CIDR notation",
 		Parameters: []function.Parameter{
 			function.StringParameter{
 				Name:        "cidr",
