@@ -77,7 +77,7 @@ func (f *tocidrFunction) Run(ctx context.Context, req function.RunRequest, resp 
 	// Convert mask to net.IPMask
 	ones, bits := net.IPMask(mask.To4()).Size()
 
-	if ones == 0 || bits == 0 {
+	if ones == 0 && bits == 0 {
 		resp.Error = function.ConcatFuncErrors(resp.Error, function.NewFuncError("Non-canonical subnet mask"))
 		return
 	}
