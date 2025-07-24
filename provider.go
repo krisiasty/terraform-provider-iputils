@@ -71,5 +71,6 @@ func (p *iputilsProvider) Functions(_ context.Context) []func() function.Functio
 		newIscidrFunction,    // cidrvalid(address string) bool
 		newIsrangeFunction,   // isrange(range string) bool
 		newRangesizeFunction, // rangesize(range string) int64
+		newRangehostFunction, // rangehost(range string, index int64) string
 	}
 }

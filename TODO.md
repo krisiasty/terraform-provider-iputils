@@ -16,8 +16,8 @@ Keep in mind that the functions may be implemented in any order, their name and 
 - [ ] given ip address (ip only or cidr), return true if multicast -> **ismulticast**
 - [ ] given ip address (ip only or cidr), return true if private -> **isprivate** (rfc1918 + cgnat / rfc4193 for ipv6)
 - [X] given ip range, return true if valid -> **isrange**
-- [ ] given ip range, return number of ip addresses -> **rangesize**
-- [ ] given ip range, return nth address from beginning or end (if negative) -> **rangehost**
+- [X] given ip range, return number of ip addresses -> **rangesize**
+- [X] given ip range, return nth address from beginning or end (if negative) -> **rangehost**
 - [ ] given ip prefix, return number of ip addresses -> **prefixsize**
 - [ ] given ip prefix, return nth address from beginning or end (if negative) -> **prefixhost**
 - [ ] given ip address and netmask, return number of ip addresses -> **subnetsize**
