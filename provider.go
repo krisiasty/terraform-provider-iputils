@@ -66,5 +66,6 @@ func (p *iputilsProvider) Functions(_ context.Context) []func() function.Functio
 		newCidrmaskFunction, // cidrmask(cidr string) string
 		newCidrbitsFunction, // cidrbits(cidr string) int32
 		newMaskcidrFunction, // maskcidr(mask string) string
+		newMaskbitsFunction, // maskbits(mask string) int32
 	}
 }
