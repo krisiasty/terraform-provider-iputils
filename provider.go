@@ -60,12 +60,14 @@ func (p *iputilsProvider) Resources(_ context.Context) []func() resource.Resourc
 // Functions defines the functions implemented in the provider.
 func (p *iputilsProvider) Functions(_ context.Context) []func() function.Function {
 	return []func() function.Function{
-		newTocidrFunction,   // tocidr(address, mask string) string
-		newFromcidrFunction, // fromcidr(cidr string) object { address: string, netmask: string }
-		newCidrhostFunction, // cidrhost(cidr string) string
-		newCidrmaskFunction, // cidrmask(cidr string) string
-		newCidrbitsFunction, // cidrbits(cidr string) int32
-		newMaskcidrFunction, // maskcidr(mask string) string
-		newMaskbitsFunction, // maskbits(mask string) int32
+		newTocidrFunction,    // tocidr(address, mask string) string
+		newFromcidrFunction,  // fromcidr(cidr string) object { address: string, netmask: string }
+		newCidrhostFunction,  // cidrhost(cidr string) string
+		newCidrmaskFunction,  // cidrmask(cidr string) string
+		newCidrbitsFunction,  // cidrbits(cidr string) int32
+		newMaskcidrFunction,  // maskcidr(mask string) string
+		newMaskbitsFunction,  // maskbits(mask string) int32
+		newIsvalidFunction,   // isvalid(address string) bool
+		newCidrvalidFunction, // cidrvalid(address string) bool
 	}
 }
