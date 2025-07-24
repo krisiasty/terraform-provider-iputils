@@ -30,6 +30,10 @@ output "mask2" {
 #   value = provider::iputils::cidrmask("10.0.0.1")
 # }
 
-# output "ipv6" {
-#   value = provider::iputils::fromcidr("2001:db8::1/64")
+output "ipv6" {
+  value = provider::iputils::cidrmask("2001:db8::1/64")
+}
+
+# output "ipv6_invalid" {
+#   value = provider::iputils::cidrmask("2001:db8::1/130")
 # }
