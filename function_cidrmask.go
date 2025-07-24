@@ -4,7 +4,8 @@
 // cidrmask function returns mask portion (with leading slash) from the address in CIDR notation.
 // takes one string parameters: the IP address and the subnet mask in CIDR notation (e.g. "192.168.128.1/24").
 // returns a string result with CIDR mask (e.g., "/24").
-// fails if the address is not in CIDR notation or if it is not an IPv4 address.
+// supports both ipv4 and ipv6.
+// fails if the address is not in CIDR notation.
 
 package main
 
@@ -51,11 +52,6 @@ func (f *cidrmaskFunction) Run(ctx context.Context, req function.RunRequest, res
 	_, network, err := net.ParseCIDR(cidr)
 	if err != nil {
 		resp.Error = function.ConcatFuncErrors(resp.Error, function.NewFuncError("Invalid CIDR address"))
-		return
-	}
-
-	if network.IP.To4() == nil {
-		resp.Error = function.ConcatFuncErrors(resp.Error, function.NewFuncError("Only IPv4 addresses are supported"))
 		return
 	}
 
