@@ -61,7 +61,8 @@ func (p *iputilsProvider) Resources(_ context.Context) []func() resource.Resourc
 func (p *iputilsProvider) Functions(_ context.Context) []func() function.Function {
 	return []func() function.Function{
 		newTocidrFunction,   // tocidr(address, mask string) string
-		newCidrhostFunction, // cidrhost(cidr string) string
 		newFromcidrFunction, // fromcidr(cidr string) object { address: string, netmask: string }
+		newCidrhostFunction, // cidrhost(cidr string) string
+		newCidrmaskFunction, // cidrmask(cidr string) string
 	}
 }

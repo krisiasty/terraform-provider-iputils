@@ -6,7 +6,7 @@ Keep in mind that the functions may be implemented in any order, their name and 
 - [X] given ip address and subnet mask, return address in cidr notation -> **tocidr** 
 - [X] given ip address with mask in cidr notation, return an object with separate address and netmask -> **fromcidr**
 - [X] given ip address with mask in cidr notation, return ip address only -> **cidrhost** (eg. 192.168.128.10)
-- [ ] given ip address with mask in cidr notation, return subnet mask only -> **cidrmask** (eg. /24)
+- [X] given ip address with mask in cidr notation, return subnet mask only -> **cidrmask** (eg. /24)
 - [ ] given ip address in cidr format, return number of subnet mask bits -> **cidrbits** (e.g. 22)
 - [ ] given subnet mask, return cidr subnet mask -> **maskcidr** (e.g. /24)
 - [ ] given subnet mask, return number of subnet mask bits -> **maskbits** (e.g. 22)
