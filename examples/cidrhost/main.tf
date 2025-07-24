@@ -29,3 +29,11 @@ output "host2" {
 # output "missing_mask" {
 #   value = provider::iputils::cidrhost("10.0.0.1")
 # }
+
+output "ipv6" {
+  value = provider::iputils::cidrhost("2001:0db8:0::1/64")
+}
+
+# output "ipv6_invalid" {
+#   value = provider::iputils::cidrhost("2001:db8::1/130")
+# }

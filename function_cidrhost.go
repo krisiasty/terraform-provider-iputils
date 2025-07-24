@@ -4,7 +4,8 @@
 // cidrhost function returns host portion from the address in CIDR notation.
 // takes one string parameters: the IP address and the subnet mask in CIDR notation (e.g. "192.168.128.1/24").
 // returns a string result with IP address (e.g., "192.168.128.1").
-// fails if the address is not in CIDR notation or if it is not an IPv4 address.
+// supports both ipv4 and ipv6.
+// fails if the address is not in CIDR notation.
 
 package main
 
@@ -34,7 +35,7 @@ func (f *cidrhostFunction) Definition(ctx context.Context, req function.Definiti
 		Parameters: []function.Parameter{
 			function.StringParameter{
 				Name:        "cidr",
-				Description: "IP address and subnet mask in CIDR notation (ipv4)",
+				Description: "IP address and subnet mask in CIDR notation (ipv4 or ipv6)",
 			},
 		},
 		Return: function.StringReturn{},
@@ -50,11 +51,6 @@ func (f *cidrhostFunction) Run(ctx context.Context, req function.RunRequest, res
 	addr, _, err := net.ParseCIDR(cidr)
 	if err != nil {
 		resp.Error = function.ConcatFuncErrors(resp.Error, function.NewFuncError("Invalid CIDR address"))
-		return
-	}
-
-	if addr.To4() == nil {
-		resp.Error = function.ConcatFuncErrors(resp.Error, function.NewFuncError("Only IPv4 addresses are supported"))
 		return
 	}
 

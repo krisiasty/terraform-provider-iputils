@@ -36,7 +36,7 @@ func (f *cidrmaskFunction) Definition(ctx context.Context, req function.Definiti
 		Parameters: []function.Parameter{
 			function.StringParameter{
 				Name:        "cidr",
-				Description: "IP address and subnet mask in CIDR notation (ipv4)",
+				Description: "IP address and subnet mask in CIDR notation (ipv4 or ipv6)",
 			},
 		},
 		Return: function.StringReturn{},
