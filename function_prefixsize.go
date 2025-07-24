@@ -54,6 +54,11 @@ func (f *prefixsizeFunction) Run(ctx context.Context, req function.RunRequest, r
 		return
 	}
 
+	if p.Addr() != p.Masked().Addr() {
+		resp.Error = function.ConcatFuncErrors(resp.Error, function.NewFuncError("Prefix is not in canonical form"))
+		return
+	}
+
 	// Calculate the size of the prefix
 	var bits int
 	if p.Addr().Is4() {
