@@ -5,6 +5,7 @@ go 1.24.5
 require (
 	github.com/hashicorp/terraform-plugin-framework v1.15.0
 	github.com/hashicorp/terraform-plugin-log v0.9.0
+	go4.org/netipx v0.0.0-20231129151722-fdeea329fbba
 )
 
 require (

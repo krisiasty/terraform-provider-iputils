@@ -11,7 +11,7 @@ Keep in mind that the functions may be implemented in any order, their name and 
 - [X] given subnet mask, return cidr subnet mask -> **maskcidr** (e.g. "/24")
 - [X] given subnet mask, return number of subnet mask bits -> **maskbits** (e.g. 22)
 - [X] given ip address, return true if valid -> **isvalid**
-- [X] given ip address in cidr format, return true if valid -> **cidrvalid**
+- [X] given ip address in cidr format, return true if valid -> **iscidr**
 - [ ] given ip address (ip only or cidr), return true if unicast -> **isunicast**
 - [ ] given ip address (ip only or cidr), return true if multicast -> **ismulticast**
 - [ ] given ip address (ip only or cidr), return true if private -> **isprivate** (rfc1918 + cgnat / rfc4193 for ipv6)
