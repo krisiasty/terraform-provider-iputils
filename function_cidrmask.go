@@ -3,7 +3,7 @@
 
 // cidrmask function returns mask portion (with leading slash) from the address in CIDR notation.
 // takes one string parameters: the IP address and the subnet mask in CIDR notation (e.g. "192.168.128.1/24").
-// returns a string result with IP address (e.g., "/24").
+// returns a string result with CIDR mask (e.g., "/24").
 // fails if the address is not in CIDR notation or if it is not an IPv4 address.
 
 package main

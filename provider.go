@@ -64,5 +64,6 @@ func (p *iputilsProvider) Functions(_ context.Context) []func() function.Functio
 		newFromcidrFunction, // fromcidr(cidr string) object { address: string, netmask: string }
 		newCidrhostFunction, // cidrhost(cidr string) string
 		newCidrmaskFunction, // cidrmask(cidr string) string
+		newCidrbitsFunction, // cidrbits(cidr string) int32
 	}
 }
