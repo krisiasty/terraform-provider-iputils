@@ -19,13 +19,13 @@ Keep in mind that the functions may be implemented in any order, their name and 
 - [X] given ip range, return number of ip addresses -> **rangesize**
 - [X] given ip range, return nth address from beginning or end (if negative) -> **rangehost**
 - [X] given ip prefix, return number of ip addresses -> **prefixsize**
-- ~~[ ] given ip prefix, return nth address from beginning or end (if negative) -> **prefixhost**~~ (already implemented by built-in **cidrhost** function)
+- [ ] ~~given ip prefix, return nth address from beginning or end (if negative) -> **prefixhost**~~ (already implemented by built-in **cidrhost** function)
 - [ ] given ip address and netmask, return number of ip addresses -> **subnetsize**
 - [ ] given ip address and netmask, return nth address from beginning or end (if negative) -> **subnethost**
 - [X] given host name, lookup ip addresses -> **lookupaddr**, **lookupipv4**, **lookupipv6**
 - [X] given IP address, lookup hostnames -> **lookuphost**
 - [X] given hostname, lookup canonical name -> **lookupcname**
-- [ ] given hostname, lookup TXT records -> **lookuptxt**
+- [X] given hostname, lookup TXT records -> **lookuptxt**
 - [ ] given hostname or ip address with port, return host portion only -> **hostonly**
 - [ ] given hostname or ip address with port, return port number only -> **portonly**
 - [ ] given url, return host portion only -> **hostonly**

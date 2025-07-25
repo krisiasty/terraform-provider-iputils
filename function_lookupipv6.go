@@ -52,7 +52,7 @@ func (f *lookupipv6Function) Run(ctx context.Context, req function.RunRequest, r
 
 	addrs, err := net.DefaultResolver.LookupIP(ctx, "ip6", host)
 	if err != nil {
-		resp.Error = function.ConcatFuncErrors(resp.Error, function.NewFuncError("Cannot resolve host: "+err.Error()))
+		resp.Error = function.ConcatFuncErrors(resp.Error, function.NewFuncError(err.Error()))
 		return
 	}
 	result := make([]string, len(addrs))

@@ -53,7 +53,7 @@ func (f *lookuphostFunction) Run(ctx context.Context, req function.RunRequest, r
 
 	hosts, err := net.DefaultResolver.LookupAddr(ctx, address)
 	if err != nil {
-		resp.Error = function.ConcatFuncErrors(resp.Error, function.NewFuncError("Cannot resolve address: "+err.Error()))
+		resp.Error = function.ConcatFuncErrors(resp.Error, function.NewFuncError(err.Error()))
 		return
 	}
 

@@ -49,7 +49,7 @@ func (f *lookupcnameFunction) Run(ctx context.Context, req function.RunRequest, 
 
 	cname, err := net.DefaultResolver.LookupCNAME(ctx, host)
 	if err != nil {
-		resp.Error = function.ConcatFuncErrors(resp.Error, function.NewFuncError("Cannot resolve host: "+err.Error()))
+		resp.Error = function.ConcatFuncErrors(resp.Error, function.NewFuncError(err.Error()))
 		return
 	}
 

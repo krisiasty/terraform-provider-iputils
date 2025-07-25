@@ -53,7 +53,7 @@ func (f *lookupaddrFunction) Run(ctx context.Context, req function.RunRequest, r
 
 	addrs, err := net.DefaultResolver.LookupIP(ctx, "ip", host)
 	if err != nil {
-		resp.Error = function.ConcatFuncErrors(resp.Error, function.NewFuncError("Cannot resolve host: "+err.Error()))
+		resp.Error = function.ConcatFuncErrors(resp.Error, function.NewFuncError(err.Error()))
 		return
 	}
 	result := make([]string, len(addrs))
