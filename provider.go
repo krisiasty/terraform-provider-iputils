@@ -76,5 +76,6 @@ func (p *iputilsProvider) Functions(_ context.Context) []func() function.Functio
 		newLookupipv4Function, // lookupipv4(host string) list(string)
 		newLookupipv6Function, // lookupipv6(host string) list(string)
 		newlookupaddrFunction, // lookupaddr(host string) list(string)
+		newLookuphostFunction, // lookuphost(address string) list(string)
 	}
 }
