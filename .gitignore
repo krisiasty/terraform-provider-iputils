@@ -33,3 +33,4 @@ go.work.sum
 terraform-provider-iputils
 **/terraform.tfstate
 **/terraform.tfstate.backup
+test/

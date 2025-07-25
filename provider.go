@@ -73,5 +73,8 @@ func (p *iputilsProvider) Functions(_ context.Context) []func() function.Functio
 		newRangesizeFunction,  // rangesize(range string) int64
 		newRangehostFunction,  // rangehost(range string, index int64) string
 		newPrefixsizeFunction, // prefixsize(prefix string) int64
+		newLookupipv4Function, // lookupipv4(host string) list(string)
+		newLookupipv6Function, // lookupipv6(host string) list(string)
+		newlookupaddrFunction, // lookupaddr(host string) list(string)
 	}
 }
