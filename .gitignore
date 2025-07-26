@@ -7,6 +7,7 @@
 *.dll
 *.so
 *.dylib
+terraform-provider-iputils
 
 # Test binary, built with `go test -c`
 *.test
@@ -28,10 +29,16 @@ go.work.sum
 .env
 
 # Editor/IDE
-# .idea/
-# .vscode/
-terraform-provider-iputils
-**/terraform.tfstate
-**/terraform.tfstate.backup
-**/.DS_Store
+.vscode/
+
+# terraform
+.terraform/
+.terraform.lock.hcl
+terraform.tfstate
+terraform.tfstate.backup
+
+# macOS
+.DS_Store
+
+# test files
 test/
