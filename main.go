@@ -23,7 +23,7 @@ func main() {
 	flag.Parse()
 
 	opts := providerserver.ServeOpts{
-		Address: "registry.terraform.io/krisiasty/iputils",
+		Address: "krisiasty/iputils",
 	}
 
 	err := providerserver.Serve(context.Background(), newIputilsProvider(version), opts)

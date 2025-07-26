@@ -79,5 +79,7 @@ func (p *iputilsProvider) Functions(_ context.Context) []func() function.Functio
 		newLookuphostFunction,  // lookuphost(address string) list(string)
 		newLookupcnameFunction, // lookupcname(host string) string
 		newLookuptxtFunction,   // lookuptxt(name string) list(string)
+		newUrlhostFunction,     // urlhost(url string) string
+		newUrlportFunction,     // urlport(url string) string
 	}
 }

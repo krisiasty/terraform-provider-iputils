@@ -16,7 +16,7 @@ Convert IP address and subnet mask to CIDR notation
 terraform {
   required_providers {
     iputils = {
-      source = "registry.terraform.io/krisiasty/iputils"
+      source = "krisiasty/iputils"
     }
   }
   required_version = ">= 1.8.0"

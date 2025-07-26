@@ -28,10 +28,9 @@ Keep in mind that the functions may be implemented in any order, their name and 
 - [X] given hostname, lookup TXT records -> **lookuptxt**
 - [ ] given hostname or ip address with port, return host portion only -> **hostonly**
 - [ ] given hostname or ip address with port, return port number only -> **portonly**
-- [ ] given url, return host portion only -> **urlhost**
-- [ ] given url, return port only -> **urlport**
+- [X] given url, return host portion only -> **urlhost**
+- [X] given url, return port only -> **urlport**
 - [ ] given url, return path only -> **urlpath**
-- [ ] given url, return port only -> **urlport**
 - [ ] given url, return query params only -> **urlquery**
 - [ ] given url, return escaped url -> **urlescape**
 - [ ] given ip prefix, offset and count, return count ip addresses starting from offset - **prefixhostlist**

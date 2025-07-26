@@ -16,7 +16,7 @@ Returns the size of the IP range
 terraform {
   required_providers {
     iputils = {
-      source = "registry.terraform.io/krisiasty/iputils"
+      source = "krisiasty/iputils"
     }
   }
   required_version = ">= 1.8.0"

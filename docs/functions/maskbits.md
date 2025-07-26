@@ -16,7 +16,7 @@ Returns number of bits in the mask provided in dotted decimal format
 terraform {
   required_providers {
     iputils = {
-      source = "registry.terraform.io/krisiasty/iputils"
+      source = "krisiasty/iputils"
     }
   }
   required_version = ">= 1.8.0"

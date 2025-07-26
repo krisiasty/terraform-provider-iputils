@@ -1,0 +1,32 @@
+terraform {
+  required_providers {
+    iputils = {
+      source = "krisiasty/iputils"
+    }
+  }
+  required_version = ">= 1.8.0"
+}
+
+provider "iputils" {
+}
+
+output "host1" {
+  value = provider::iputils::urlhost("http://192.168.128.42")
+}
+
+output "host2" {
+  value = provider::iputils::urlhost("https://www.ibm.com:443/path/to/resource?query=param#fragment")
+}
+
+output "host3" {
+  value = provider::iputils::urlhost("http://localhost:8080")
+}
+
+output "host4" {
+  value = provider::iputils::urlhost("https://[2001:0db8:0::1]/?param1=value1&param2=value2")
+}   
+
+# invalid URL - missing scheme, will fail
+# output "not_valid_url" {
+#   value = provider::iputils::urlhost("www.example.com/path/to/resource")
+# }

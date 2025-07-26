@@ -16,7 +16,7 @@ Converts subnet mask in dotted decimal format to CIDR format (with leading slash
 terraform {
   required_providers {
     iputils = {
-      source = "registry.terraform.io/krisiasty/iputils"
+      source = "krisiasty/iputils"
     }
   }
   required_version = ">= 1.8.0"

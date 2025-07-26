@@ -16,7 +16,7 @@ Return number of bits in the mask from the address in CIDR notation
 terraform {
   required_providers {
     iputils = {
-      source = "registry.terraform.io/krisiasty/iputils"
+      source = "krisiasty/iputils"
     }
   }
   required_version = ">= 1.8.0"
