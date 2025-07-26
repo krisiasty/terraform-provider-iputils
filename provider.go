@@ -82,5 +82,6 @@ func (p *iputilsProvider) Functions(_ context.Context) []func() function.Functio
 		newUrlhostFunction,     // urlhost(url string) string
 		newUrlportFunction,     // urlport(url string) string
 		newUrlpathFunction,     // urlpath(url string) string
+		newUrlqueryFunction,    // urlquery(url string) map(string, list(string))
 	}
 }

@@ -30,8 +30,8 @@ Keep in mind that the functions may be implemented in any order, their name and 
 - [ ] given hostname or ip address with port, return port number only -> **portonly**
 - [X] given url, return host portion only -> **urlhost**
 - [X] given url, return port only -> **urlport**
-- [ ] given url, return path only -> **urlpath**
-- [ ] given url, return query params only -> **urlquery**
+- [X] given url, return path only -> **urlpath**
+- [X] given url, return query params only -> **urlquery**
 - [ ] given url, return escaped url -> **urlescape**
 - [ ] given ip prefix, offset and count, return count ip addresses starting from offset - **prefixhostlist**
 - [ ] given ip address with subnet mask, offset and count, return count ip addresses starting from offset - **subnethostlist**

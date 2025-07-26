@@ -1,0 +1,61 @@
+terraform {
+  required_providers {
+    iputils = {
+      source = "krisiasty/iputils"
+    }
+  }
+  required_version = ">= 1.8.0"
+}
+
+provider "iputils" {
+}
+
+# this url does not have any query params, will return an empty map
+output "query1" {
+  value = provider::iputils::urlquery("http://192.168.128.42")
+}
+
+# returns a map with a key "query" and a list with a single value "param"
+output "query2" {
+  value = provider::iputils::urlquery("https://www.ibm.com:443/path/to/resource?query=param#fragment")
+}
+
+# returns a map with keys "site_id" and a list with single value "24",
+# and another key "status" with a list of values containing "active" and "available"
+locals {
+    query3 = provider::iputils::urlquery("http://localhost:8080/devices/?site_id=24&status=active&status=available")
+}
+
+#
+output "path3_site_id" {
+  value = local.query3["site_id"][0]
+}
+
+# a list with a single values "active" and "available"
+output "path3_status" {
+  value = local.query3["status"]
+}
+
+locals {
+    query4 = provider::iputils::urlquery("https://[2001:0db8:0::1]/?param1=value1&param2=value2")
+}
+
+# "value1"
+output "query4_param1" {
+    value = local.query4["param1"][0]
+}   
+
+# "value2"
+output "query4_param2" {
+    value = local.query4["param2"][0]
+}   
+
+# returns a map with a key "param" and an empty list of values
+output "query5" {
+  value = provider::iputils::urlquery("https://www.ibm.com:443/path/to/resource?param")
+}
+
+# invalid URL - missing scheme, will fail
+# output "not_valid_url" {
+#   value = provider::iputils::urlquery("www.example.com/path/to/resource")
+# }
