@@ -54,7 +54,7 @@ func (f *urlportFunction) Run(ctx context.Context, req function.RunRequest, resp
 		return
 	}
 
-	// If scheme is not specified, assume "http" and try to parse again
+	// Fail if the scheme is not specified
 	if u.Scheme == "" {
 		resp.Error = function.ConcatFuncErrors(resp.Error, function.NewFuncError("Invalid URL - missing scheme"))
 		return

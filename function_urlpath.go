@@ -1,9 +1,9 @@
 // Copyright (c) Krzysztof Ciepłucha
 // SPDX-License-Identifier: MIT
 
-// urlhost function returns host portion of the url.
+// urlpath function returns the path portion of the url.
 // takes one string parameter: valid url (e.g. "https://example.com/path?query=1#fragment").
-// returns a string result with host portion (e.g., "example.com").
+// returns a string result with path portion (e.g., "/path").
 // fails if the url is invalid (e.g. missing scheme) or cannot be parsed.
 
 package main
@@ -16,32 +16,32 @@ import (
 )
 
 // Ensure the implementation satisfies the desired interfaces.
-var _ function.Function = &urlhostFunction{}
+var _ function.Function = &urlpathFunction{}
 
-type urlhostFunction struct{}
+type urlpathFunction struct{}
 
-func newUrlhostFunction() function.Function {
-	return &urlhostFunction{}
+func newUrlpathFunction() function.Function {
+	return &urlpathFunction{}
 }
 
-func (f *urlhostFunction) Metadata(ctx context.Context, req function.MetadataRequest, resp *function.MetadataResponse) {
-	resp.Name = "urlhost"
+func (f *urlpathFunction) Metadata(ctx context.Context, req function.MetadataRequest, resp *function.MetadataResponse) {
+	resp.Name = "urlpath"
 }
 
-func (f *urlhostFunction) Definition(ctx context.Context, req function.DefinitionRequest, resp *function.DefinitionResponse) {
+func (f *urlpathFunction) Definition(ctx context.Context, req function.DefinitionRequest, resp *function.DefinitionResponse) {
 	resp.Definition = function.Definition{
-		Description: "Returns host portion from the URL",
+		Description: "Returns the path portion from the URL",
 		Parameters: []function.Parameter{
 			function.StringParameter{
 				Name:        "url",
-				Description: "Valid URL to extract host from (e.g. https://example.com/path?query=1#fragment)",
+				Description: "Valid URL to extract path from (e.g. https://example.com/path?query=1#fragment)",
 			},
 		},
 		Return: function.StringReturn{},
 	}
 }
 
-func (f *urlhostFunction) Run(ctx context.Context, req function.RunRequest, resp *function.RunResponse) {
+func (f *urlpathFunction) Run(ctx context.Context, req function.RunRequest, resp *function.RunResponse) {
 	// Read Terraform argument data into the variables
 	var urlstring string
 	resp.Error = function.ConcatFuncErrors(resp.Error, req.Arguments.Get(ctx, &urlstring))
@@ -59,8 +59,8 @@ func (f *urlhostFunction) Run(ctx context.Context, req function.RunRequest, resp
 		return
 	}
 
-	host := u.Hostname()
+	path := u.Path
 
 	// Set the result
-	resp.Error = function.ConcatFuncErrors(resp.Error, resp.Result.Set(ctx, &host))
+	resp.Error = function.ConcatFuncErrors(resp.Error, resp.Result.Set(ctx, &path))
 }

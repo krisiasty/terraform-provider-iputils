@@ -81,5 +81,6 @@ func (p *iputilsProvider) Functions(_ context.Context) []func() function.Functio
 		newLookuptxtFunction,   // lookuptxt(name string) list(string)
 		newUrlhostFunction,     // urlhost(url string) string
 		newUrlportFunction,     // urlport(url string) string
+		newUrlpathFunction,     // urlpath(url string) string
 	}
 }
